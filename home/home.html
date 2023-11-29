@@ -304,7 +304,7 @@
 
       <br><br>
 
-      
+
       <div class="contribuicao">
         <div class="progress-container">
           <div class="progress-bar" id="progress"></div>
@@ -337,7 +337,6 @@
         </script>
 
         <style>
-
           .progress-container {
             /* padding: 3px; */
             position: relative;
@@ -356,10 +355,10 @@
             /* Defina a cor desejada */
             transition: width 0.5s ease;
             /* Adiciona transição para um preenchimento suave */
-            border-radius: 10px;
+
           }
 
-          .contribuicao h1{
+          .contribuicao h1 {
             position: absolute;
             top: 50%;
             left: 50%;
@@ -373,10 +372,70 @@
       </div>
 
       <div class="anuncios">
+        <a href="#" style="position: absolute; left: 37px; top: 294px; width: 25px; height: 25px;" id="openPopup"></a>
 
-        <img src="home_files/anuncio.png" alt="exemplo de anuncio">
+        <div class="popup" id="popup">
+          <div class="popup-content">
+            <span class="close" id="closePopup">&times;</span>
+            <p style="color: black; font-weight: bold;">Feedback</p>
+            <form action="#" style="display: flex; flex-direction: column;">
+              <textarea name="feedback" placeholder="Descreva o que achou do anuncio" cols="30" rows="7"></textarea>
+              <button style="background-color: #37ABC8; color: white; border-radius: 5px;">Enviar</button>
+            </form>
+          </div>
+        </div>
+
         <style>
-          .anuncios{
+          /* Estilo básico para o pop-up */
+          .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #fff;
+            padding: 20px;
+            border: 1px solid #ccc;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+          }
+
+          .popup-content {
+            text-align: center;
+          }
+
+          .close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+            font-size: 20px;
+          }
+        </style>
+
+        <script>
+          document.addEventListener('DOMContentLoaded', function () {
+            // Obtenha referências para o link e o pop-up
+            var openPopupLink = document.getElementById('openPopup');
+            var popup = document.getElementById('popup');
+            var closePopup = document.getElementById('closePopup');
+
+            // Adicione um ouvinte de evento ao link para mostrar o pop-up
+            openPopupLink.addEventListener('click', function () {
+              popup.style.display = 'block';
+            });
+
+            // Adicione um ouvinte de evento ao botão de fechar para ocultar o pop-up
+            closePopup.addEventListener('click', function () {
+              popup.style.display = 'none';
+            });
+          });
+        </script>
+
+        <img src="home_files/anuncio.png" alt="exemplo de anuncio" style="width: 100%; height: 100%;">
+
+        <style>
+          .anuncios {
             padding: 10px;
             background-color: #ccc;
             border-radius: 10px;
@@ -384,10 +443,6 @@
             display: flex;
             align-items: center;
             justify-content: center;
-          }
-          .anuncios img{
-            height: 100%;
-            width: 100%;
           }
         </style>
 
