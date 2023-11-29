@@ -1,15 +1,31 @@
 const mongoose = require('mongoose');
 
-// Esquema para Gestor
 const gestorSchema = new mongoose.Schema({
-  // propriedades do gestor
+  nome: {
+    type: String,
+    required: true
+  },
+  funcao: {
+    type: String,
+    required: true
+  },
+  cpf: {
+    type: Number,
+    required: true
+  },
+  senha: {
+    type: Number,
+    required: true
+  },
+  email: {
+    type: String,
+    required: true
+  }
 });
 
 const Gestor = mongoose.model('Gestor', gestorSchema);
 
-module.exports = {
-  Gestor
-};
+module.exports = Gestor;
 
 // Node.js/moongose ou java (teoricamente vcs do libreflix iriam apropriar o java para moongose).
 
