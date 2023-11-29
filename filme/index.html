@@ -1,12 +1,47 @@
-<div style="background-color: black; padding: 0;">
+<!DOCTYPE html>
+<html>
 
+<head>
+    <style>
+        html{
+            background-color: black;
+        }
+        .container {
+            display: flex;
+            height: 100vh;
+        }
 
-    <div class="box">
-        <iframe src="filme.html" frameborder="0" scrolling="no" width="80%" height="100%" align="left"> </iframe>
+        .iframe {
+            flex: 80%;
+            margin-top: 3%;
+            height: 90%;
+            border: none;
+        }
+
+        .ad {
+            padding: 5%;
+            /* flex: 20%; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .ad img {
+            width: 100%;
+            height: auto;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="container"> 
+        
+        <iframe class="iframe" src="filme.html"></iframe>
+        <div class="ad"> 
+            <img src="filme_files/anuncio-lateral.png" alt="Anuncio"> 
+        </div>
     </div>
+</body>
 
-    <div class="box">
-        <iframe src="https://embed.spotify.com/?uri=spotify:user:1285279066:playlist:56KI83cMiMTOocIdXq2R5j"
-            frameborder="0" scrolling="no" width="20%" height="100%" align="right"></iframe>
-    </div>
-</div>
+</html>
