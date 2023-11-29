@@ -306,12 +306,88 @@
 
       
       <div class="contribuicao">
-        <h1>barra de contribuicao</h1>
+        <div class="progress-container">
+          <div class="progress-bar" id="progress"></div>
+          <h1>Barra de Contribuição do Apoiadores</h1>
+        </div>
+        <script>
+          const progressbar = document.querySelector('.progress-bar');
 
+          function updateProgress(value) {
+            progressbar.style.width = value + '%';
+          }
+
+          function animateProgress() {
+            let value = 15;
+            const increment = 0.1; // Ajuste conforme desejado
+            const interval = 50; // Intervalo em milissegundos
+
+            const intervalId = setInterval(function () {
+              value += increment;
+              updateProgress(value);
+
+              if (value >= 100) {
+                clearInterval(intervalId);
+              }
+            }, interval);
+          }
+
+          // Chame a função animateProgress() para iniciar a animação
+          animateProgress();
+        </script>
+
+        <style>
+
+          .progress-container {
+            padding: 3px;
+            position: relative;
+            margin: 10px auto;
+            width: 100%;
+            background-color: #ccc;
+            height: 50px;
+            overflow: hidden;
+          }
+
+          .progress-bar {
+            height: 100%;
+            width: 0;
+            background-color: #37ABC8;
+            /* Defina a cor desejada */
+            transition: width 0.5s ease;
+            /* Adiciona transição para um preenchimento suave */
+          }
+
+          .contribuicao h1{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            margin: 0;
+            font-size: smaller;
+            font-weight: 600;
+            color: black;
+          }
+        </style>
       </div>
 
       <div class="anuncios">
-        <h1>teste</h1>
+
+        <img src="home_files/anuncio.png" alt="exemplo de anuncio">
+        <style>
+          .anuncios{
+            padding: 10px;
+            background-color: #ccc;
+            border-radius: 10px;
+            height: 150px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+          img{
+            height: 100%;
+            width: 100%;
+          }
+        </style>
 
       </div>
 
