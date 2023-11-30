@@ -27,9 +27,9 @@ const Gestor = mongoose.model('Gestor', gestorSchema);
 
 module.exports = Gestor;
 
-//daos e mediators juntos?
 
-const Gestor = require('models/Gestor.js'); // Substitua pelo caminho correto para o seu arquivo de modelo
+
+const Gestor = require('models/Gestor.js'); 
 
 async function criarGestor(gestorData) {
   const gestor = new Gestor(gestorData);
