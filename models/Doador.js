@@ -15,11 +15,18 @@ const Doador = mongoose.model('Doador', doadorSchema);
 
 module.exports = Doador;
 
-// Node.js/moongose ou java (teoricamente vcs do libreflix iriam apropriar o java para moongose).
+const Doador = require('models/Doador.js');
 
-//daos
+async function criarDoador(DoadorData) {
+  const Doador = new Doador(DoadorData);
+  await Doador.save();
+  return Doador;
+};
+
+
+module.exports = {
+  criarDoador
+};
 
 
 
-
-//mediators

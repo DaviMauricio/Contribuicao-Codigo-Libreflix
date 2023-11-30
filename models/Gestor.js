@@ -27,12 +27,39 @@ const Gestor = mongoose.model('Gestor', gestorSchema);
 
 module.exports = Gestor;
 
-// Node.js/moongose ou java (teoricamente vcs do libreflix iriam apropriar o java para moongose).
+//daos e mediators juntos?
 
-//daos
+const Gestor = require('models/Gestor.js'); // Substitua pelo caminho correto para o seu arquivo de modelo
+
+async function criarGestor(gestorData) {
+  const gestor = new Gestor(gestorData);
+  await gestor.save();
+  return gestor;
+};
+
+async function excluirGestor(id) {
+  const result = await Gestor.findByIdAndRemove(id);
+  return result;
+};
+
+async function alterarGestor(id, gestorData) {
+  const gestor = await Gestor.findByIdAndUpdate(id, gestorData, { new: true });
+  return gestor;
+};
+
+async function buscarGestor(id) {
+  const gestor = await Gestor.findById(id);
+  return gestor;
+};
+
+module.exports = {
+  criarGestor,
+  excluirGestor,
+  alterarGestor,
+  buscarGestor
+};
 
 
 
 
 
-//mediators

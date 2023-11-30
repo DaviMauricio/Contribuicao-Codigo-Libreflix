@@ -452,7 +452,6 @@
       <br><br>
 
 
-
       <h3>Para Assistir Hoje</h3>
       <div class="grid">
         <p> </p>
@@ -6091,57 +6090,127 @@
         </div>
       </div>
 
-      <div class="container">
-        <div class="row">
-          <div class="text-center">
-            <a href="https://mastodon.social/@libreflix" class="external" target="_blank">
-              <i class="fab fa-mastodon footer-icons"></i>
-            </a>
-            <a href="https://diasporabrazil.org/people/78e821c025fd0136f91900163c5e21ed" class="external"
-              target="_blank">
-              <i class="fa fa-asterisk footer-icons"></i>
-            </a>
-            <a href="https://twitter.com/libreflix" class="external" target="_blank">
-              <i class="fa fa-twitter footer-icons"></i>
-            </a>
-            <a href="https://www.facebook.com/libreflix/" class="external" target="_blank">
-              <i class="fa fa-facebook footer-icons"></i>
-            </a>
-            <a href="https://instagram.com/libreflix" class="external" target="_blank">
-              <i class="fa fa-instagram footer-icons"></i>
-            </a>
-            <a href="https://t.me/libreflix" class="external" target="_blank">
-              <i class="fa fa-paper-plane footer-icons"></i>
-            </a>
 
-            <!-- <a href="https://libregit.org/libreflix">
-        <i class="fa fa-newspaper-o footer-icons"></i>
-      </a> -->
+      <div class="col-6 col-sm-4 col-md-2 mb-3 pr-3">
+        <div class="anunciador">
+          <button href="#" id="openPopupAnunciador">Anuncie Aqui</button>
+          <div class="popupAnunciador" id="popupAnunciador">
+            <div class="popup-content">
+              <span class="closeAnunciador" id="closePopupAnunciador">&times;</span>
+              <p style="color: black; font-weight: bold;">Quero Anunciar</p>
+              <form action="#" style="display: flex; flex-direction: column;">
+                <input type="text" name="nome" placeholder="Nome da iniciativa" required>
+                <input type="email" name="email" placeholder="Email" required>
+                <input type="text" name="cpf_cnpj" placeholder="CPF ou CNPJ" required>
+                <input type="text" name="cep" placeholder="CEP" required>
+                <textarea name="descricao" placeholder="Descrição" cols="30" rows="7" required></textarea>
+                <button style="background-color: #37ABC8; color: white; border-radius: 5px;">Enviar</button>
+              </form>
+            </div>
           </div>
+
+          <style>
+            /* Estilo básico para o pop-up */
+            .popupAnunciador {
+              display: none;
+              position: fixed;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+              background-color: #fff;
+              padding: 20px;
+              border: 1px solid #ccc;
+              box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+              z-index: 1000;
+            }
+
+            .popup-content {
+              text-align: center;
+            }
+
+            .closeAnunciador {
+              position: absolute;
+              top: 10px;
+              right: 10px;
+              cursor: pointer;
+              font-size: 20px;
+            }
+          </style>
+
+          <script>
+            document.addEventListener('DOMContentLoaded', function () {
+              // Obtenha referências para o link e o pop-up
+              var openPopupAnunciadorLink = document.getElementById('openPopupAnunciador');
+              var popupAnunciador = document.getElementById('popupAnunciador');
+              var closePopupAnunciador = document.getElementById('closePopupAnunciador');
+
+              // Adicione um ouvinte de evento ao link para mostrar o pop-up
+              openPopupAnunciadorLink.addEventListener('click', function () {
+                popupAnunciador.style.display = 'block';
+              });
+
+              // Adicione um ouvinte de evento ao botão de fechar para ocultar o pop-up
+              closePopupAnunciador.addEventListener('click', function () {
+                popupAnunciador.style.display = 'none';
+              });
+            });
+          </script>
+          </ul>
         </div>
       </div>
+  </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="text-center">
+        <a href="https://mastodon.social/@libreflix" class="external" target="_blank">
+          <i class="fab fa-mastodon footer-icons"></i>
+        </a>
+        <a href="https://diasporabrazil.org/people/78e821c025fd0136f91900163c5e21ed" class="external" target="_blank">
+          <i class="fa fa-asterisk footer-icons"></i>
+        </a>
+        <a href="https://twitter.com/libreflix" class="external" target="_blank">
+          <i class="fa fa-twitter footer-icons"></i>
+        </a>
+        <a href="https://www.facebook.com/libreflix/" class="external" target="_blank">
+          <i class="fa fa-facebook footer-icons"></i>
+        </a>
+        <a href="https://instagram.com/libreflix" class="external" target="_blank">
+          <i class="fa fa-instagram footer-icons"></i>
+        </a>
+        <a href="https://t.me/libreflix" class="external" target="_blank">
+          <i class="fa fa-paper-plane footer-icons"></i>
+        </a>
+
+        <!-- <a href="https://libregit.org/libreflix">
+        <i class="fa fa-newspaper-o footer-icons"></i>
+      </a> -->
+      </div>
+    </div>
+  </div>
+  <br>
+
+  <small>
+    <p align="center">
+      Feito com ♥ por <a href="https://twitter.com/guilmour" class="external" target="_blank">Guilmour Rossi </a>e
+      contribuidores.
       <br>
-
       <small>
-        <p align="center">
-          Feito com ♥ por <a href="https://twitter.com/guilmour" class="external" target="_blank">Guilmour Rossi </a>e
-          contribuidores.
-          <br>
-          <small>
-            Exceto quando citado, informações e artes de capa são liçenciados por © LibreFlix e contribuidores <a
-              href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="external" target="_blank">(CC
-              BY-NC-SA)</a>.
-            Obras e suas imagens são licenciadas por seus respectivos realizadores.
-          </small>
-          <br>
-          <small>
-            v1.3.1
-          </small>
-        </p>
-
+        Exceto quando citado, informações e artes de capa são liçenciados por © LibreFlix e contribuidores <a
+          href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="external" target="_blank">(CC
+          BY-NC-SA)</a>.
+        Obras e suas imagens são licenciadas por seus respectivos realizadores.
       </small>
+      <br>
+      <small>
+        v1.3.1
+      </small>
+    </p>
 
-    </footer>
+  </small>
+
+  </footer>
   </div>
 
 

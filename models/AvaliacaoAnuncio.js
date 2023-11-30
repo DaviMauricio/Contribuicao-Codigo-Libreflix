@@ -15,13 +15,27 @@ const AvaliacaoAnuncio = mongoose.model('AvaliacaoAnuncio', avaliacaoAnuncioSche
 
 module.exports = AvaliacaoAnuncio;
 
-// Node.js/moongose ou java (teoricamente vcs do libreflix iriam apropriar o java para moongose).
+const AvaliacaoAnuncio = require('models/AvaliacaoAnuncio.js');
 
-//daos
+async function criarAvaliacaoAnuncio(AvaliacaoAnuncioData) {
+  const AvaliacaoAnuncio = new AvaliacaoAnuncio(AvaliacaoAnuncioData);
+  await AvaliacaoAnuncio.save();
+  return AvaliacaoAnuncio;
+};
+
+async function excluirAvaliacaoAnuncio(id) {
+  const result = await AvaliacaoAnuncio.findByIdAndRemove(id);
+  return result;
+};
 
 
+async function buscarAvaliacaoAnuncio(id) {
+  const AvaliacaoAnuncio = await AvaliacaoAnuncio.findById(id);
+  return AvaliacaoAnuncio;
+};
 
-
-
-//mediators
-//
+module.exports = {
+  criarAvaliacaoAnuncio,
+  excluirAvaliacaoAnuncio,
+  buscarAvaliacaoAnuncio
+};

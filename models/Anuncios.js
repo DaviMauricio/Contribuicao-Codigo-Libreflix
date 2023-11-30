@@ -27,12 +27,39 @@ const Anuncios = mongoose.model('Anuncios', anunciosSchema);
 
 module.exports = Anuncios;
 
-// Node.js/moongose ou java (teoricamente vcs do libreflix iriam apropriar o java para moongose).
+const Anuncios = require('models/Anuncios.js');
 
-//daos
+async function criarAnuncios(AnunciosData) {
+  const Anuncios = new Anuncios(AnunciosData);
+  await Anuncios.save();
+  return Anuncios;
+};
+
+async function excluirAnuncios(id) {
+  const result = await Anuncios.findByIdAndRemove(id);
+  return result;
+};
+
+async function alterarAnuncios(id, AnunciosData) {
+  const Anuncios = await Anuncios.findByIdAndUpdate(id, AnunciosData, { new: true });
+  return Anuncios;
+};
+
+async function buscarAnuncios(id) {
+  const Anuncios = await Anuncios.findById(id);
+  return Anuncios;
+};
+
+module.exports = {
+  criarAnuncios,
+  excluirAnuncios,
+  alterarAnuncios,
+  buscarAnuncios
+};
 
 
 
 
 
-//mediators
+
+
