@@ -1,0 +1,61 @@
+<div class="dropdown">
+    <a class="fontGestor">NomeLoginGestor</a>
+    <div class="dropdown-content">
+        <a href="#">Meu Perfil</a>
+        <a href="#">Editar Conta</a>
+        <a href="#">Meus Envios</a>
+        <a href="#">Anunciar</a>
+        <a href="#">Sair</a>
+    </div>
+</div>
+
+<style>
+
+  .fontGestor{
+      font: 400 20px arial;
+      font-weight: bold;
+      color: white;
+  }
+  .dropdown {
+      position: relative;
+      display: inline-block;
+      height: 56px;
+      width: 56px;
+      border-radius: 5px;
+      font-size: 2em;
+      cursor: pointer;
+  }
+
+  .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #343434;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+      border-radius: 5px;
+      color: inherit;
+      font: 400 15px arial;
+      white-space: nowrap;
+      cursor: default;
+      top:100%;
+  }
+
+  .dropdown-content a {
+      color: black;
+      padding: .5em;
+      padding-left: 2.5em;
+      text-decoration: none;
+      display: block;
+      position: relative;
+      cursor: pointer;
+  }
+
+  .dropdown-content a:hover {
+      background: rgba(255, 255, 255, .08);
+  }
+
+  .dropdown:hover .dropdown-content {
+      display: block;
+  }
+</style>
