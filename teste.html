@@ -1,61 +1,89 @@
-<div class="dropdown">
-    <a class="fontGestor">NomeLoginGestor</a>
-    <div class="dropdown-content">
-        <a href="#">Meu Perfil</a>
-        <a href="#">Editar Conta</a>
-        <a href="#">Meus Envios</a>
-        <a href="#">Anunciar</a>
-        <a href="#">Sair</a>
-    </div>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Formulário</title>
+</head>
+<body>
+    <form>
+        <label for="video">Vídeo:</label>
+        <div class="input-container">
+            <input type="file" id="video" accept="video/*">
+            <i class="fas fa-upload"></i>
+        </div>
+
+        <label for="foto">Foto:</label>
+        <div class="input-container">
+            <input type="file" id="foto" accept="image/*">
+            <i class="fas fa-upload"></i>
+        </div>
+
+        <label for="anunciador">Anunciador:</label>
+        <input type="text" id="email" name="email" required="">
+
+        <label for="descricao">Descrição:</label>
+        <textarea id="descricao" name="descricao"></textarea>
+
+        <button type="submit">Enviar</button>
+    </form>
+</body>
 
 <style>
+    body {
+    font-family: Arial, sans-serif;
+}
 
-  .fontGestor{
-      font: 400 20px arial;
-      font-weight: bold;
-      color: white;
-  }
-  .dropdown {
-      position: relative;
-      display: inline-block;
-      height: 56px;
-      width: 56px;
-      border-radius: 5px;
-      font-size: 2em;
-      cursor: pointer;
-  }
+form {
+    width: 300px;
+    margin: 0 auto;
+}
 
-  .dropdown-content {
-      display: none;
-      position: absolute;
-      background-color: #343434;
-      min-width: 160px;
-      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-      z-index: 1;
-      border-radius: 5px;
-      color: inherit;
-      font: 400 15px arial;
-      white-space: nowrap;
-      cursor: default;
-      top:100%;
-  }
+label {
+    display: block;
+    margin-top: 10px;
+}
 
-  .dropdown-content a {
-      color: black;
-      padding: .5em;
-      padding-left: 2.5em;
-      text-decoration: none;
-      display: block;
-      position: relative;
-      cursor: pointer;
-  }
+input[type="text"], textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    margin-top: 5px;
+}
 
-  .dropdown-content a:hover {
-      background: rgba(255, 255, 255, .08);
-  }
+button[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+}
 
-  .dropdown:hover .dropdown-content {
-      display: block;
-  }
+.input-container {
+    position: relative;
+}
+
+.input-container input[type="file"] {
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+}
+
+.fas {
+    color: #ccc;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 10px;
+}
 </style>
+</html>
